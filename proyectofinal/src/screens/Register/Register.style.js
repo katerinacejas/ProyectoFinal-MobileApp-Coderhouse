@@ -20,7 +20,7 @@ export default styles = StyleSheet.create({
         backgroundColor: colors.blanco,
         paddingRight: 45,
     },
-    button: {
+    botonRegistrarse: {
         backgroundColor: colors.turquesa,
         padding: 10,
         borderRadius: 10,
@@ -31,7 +31,7 @@ export default styles = StyleSheet.create({
         elevation: 5,
         marginTop: 15,
     },
-    buttonText: {
+    textoBoton: {
         color: colors.negro,
         fontSize: sizes.botones,
         textAlign: 'center',
@@ -42,11 +42,22 @@ export default styles = StyleSheet.create({
         resizeMode: 'contain', 
         marginTop: '30%',
     },
-    textoNoTenesCuenta: {
+    textoTenesCuenta: {
         fontSize: sizes.inputs,
         color: colors.blanco,
-        paddingTop: '50%',
+        paddingTop: '20%',
         fontFamily: 'meriendaRegular',
+    },
+    botonTenesCuenta: {
+        backgroundColor: colors.turquesa,
+        padding: 10,
+        borderRadius: 10,
+        shadowColor: colors.blanco,
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.8,
+        shadowRadius: 4,
+        elevation: 5,
+        marginTop: 15,
     },
     contraseniaView: {
         flexDirection: 'row',

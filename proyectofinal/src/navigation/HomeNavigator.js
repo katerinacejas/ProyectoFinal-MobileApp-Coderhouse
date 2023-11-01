@@ -5,7 +5,7 @@ import { Image } from 'react-native'
 
 const Stack = createNativeStackNavigator()
 
-const HomeNavigator = ({ setLoginHecho })  => {
+const HomeNavigator = ()  => {
     return (
         <Stack.Navigator
             initialRouteName="HomeStack"
@@ -16,7 +16,6 @@ const HomeNavigator = ({ setLoginHecho })  => {
             <Stack.Screen
                 name="HomeStack"
                 component={Home}
-                initialParams={{ setLoginHecho: setLoginHecho }}
                 options={{
                     headerTitle: () =>  <Image style={{ height: 30, resizeMode: 'contain', flex: 1,  alignSelf: 'center'}} source={require('../logo.png')} />,
                     headerStyle: { backgroundColor: colors.negro }

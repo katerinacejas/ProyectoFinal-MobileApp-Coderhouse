@@ -6,14 +6,13 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 const Stack = createNativeStackNavigator()
 
-const StackNavigator = ({ setLoginHecho }) => {
+const StackNavigator = () => {
     return (
         <NavigationContainer>
             <Stack.Navigator initialRouteName="Home" >
                 <Stack.Screen
                     name="Home"
                     component={Home}
-                    initialParams={{ setLoginHecho: setLoginHecho }}
                     options={{
                         headerTitle: () =>  <Image style={{ height: 30, resizeMode: 'contain', flex: 1,  alignSelf: 'center'}} source={require('../../src/logo.png')} />,
                         headerStyle: { backgroundColor: colors.negro }

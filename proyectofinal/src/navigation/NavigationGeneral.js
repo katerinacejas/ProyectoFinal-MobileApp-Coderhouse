@@ -1,16 +1,15 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import BottomTabNavigator from './BottomTabNavigator'
-import Login  from '../screens/Login/Login'
+import AutenticacionStackNavigator from './AutenticacionStackNavigator'
 
 const NavigationGeneral = () => {
+    const { usuario, localId } = useSelector(state => state.login)
 
-	const loginHecho = useSelector((state) => state.login.loginHecho);
-
-	return (loginHecho ? (
+	return (usuario ? (
             <BottomTabNavigator/>
         ) : (
-            <Login />
+            <AutenticacionStackNavigator />
         )
 	)
 }

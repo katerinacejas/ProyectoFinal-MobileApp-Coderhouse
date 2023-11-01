@@ -1,22 +1,33 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    loginHecho: false,
+    usario: null,
+    token: null,
+    localId: null,
 };
 
 export const LoginReducer = createSlice({
     name: 'login',
     initialState,
     reducers: {
-        iniciarSesion: (state) => {
-            state.loginHecho = true
+        setUsuario: (state, action) => {
+            console.log(action.payload.email)
+            return {
+                usuario: action.payload.email,
+                token: action.payload.idToken,
+                localId: action.payload.localId,
+            }
         },
-        cerrarSesion: (state) => {
-            state.loginHecho = false
+        clearUsuario: () => {
+            return {
+                usuario: null,
+                token: null,
+                localId: null,
+            }
         },
     },
 })
 
-export const { iniciarSesion , cerrarSesion } = LoginReducer.actions
+export const { setUsuario , clearUsuario } = LoginReducer.actions
 
 export default LoginReducer.reducer
