@@ -1,21 +1,21 @@
-import { Perfil } from '../screens'
+import { Buscar } from '../screens'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 const Stack = createNativeStackNavigator()
 
-const PerfilNavigator = () => {
+const BuscarNavigator = () => {
     return (
         <Stack.Navigator
-            initialRouteName="PerfilStack"
+            initialRouteName="BuscarStack"
             screenOptions={() => ({
                 headerShown: false,
             })}
         >
             <Stack.Screen
-                name="PerfilStack"
-                component={Perfil}
+                name="BuscarStack"
+                component={Buscar}
             />
         </Stack.Navigator>
     )
 }
-export default PerfilNavigator
+export default BuscarNavigator

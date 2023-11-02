@@ -2,22 +2,29 @@ import { Home } from '../screens/'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { colors } from '../constants/colors'
 import { Image } from 'react-native'
+import { StyleSheet } from 'react-native'
 
 const Stack = createNativeStackNavigator()
 
-const HomeNavigator = ()  => {
+const HeaderHome = () => {
+    return (
+        <Image style={styles.logo} source={require('../logoPeque.png')} />
+    )
+}
+
+const HomeNavigator = () => {
     return (
         <Stack.Navigator
             initialRouteName="HomeStack"
             screenOptions={() => ({
-                headerShown: false,
+                headerShown: true,
             })}
         >
             <Stack.Screen
                 name="HomeStack"
                 component={Home}
                 options={{
-                    headerTitle: () =>  <Image style={{ height: 30, resizeMode: 'contain', flex: 1,  alignSelf: 'center'}} source={require('../logo.png')} />,
+                    headerTitle: HeaderHome,
                     headerStyle: { backgroundColor: colors.negro }
                 }}
             />
@@ -25,3 +32,12 @@ const HomeNavigator = ()  => {
     )
 }
 export default HomeNavigator
+
+const styles = StyleSheet.create({
+    logo: {
+        height: 40, 
+        width: '100%', 
+        resizeMode: 'contain',
+        left: -15,
+    },
+})
