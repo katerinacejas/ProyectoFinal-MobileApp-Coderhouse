@@ -52,7 +52,7 @@ const Register = ({ navigation }) => {
         <View style={styles.container}>
             <StatusBar translucent={true} backgroundColor="transparent" />
             <Image
-                source={require('../../logo.png')}
+                source={{ uri: 'https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/logo.png?alt=media' }}
                 style={styles.logo}
             />
             <TextInput

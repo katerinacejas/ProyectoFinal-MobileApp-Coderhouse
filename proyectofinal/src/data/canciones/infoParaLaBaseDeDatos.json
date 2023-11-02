@@ -1,0 +1,262 @@
+[
+    {
+        "canción": "Believer",
+        "autor": "Imagine Dragons",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fbeliever.jpg?alt=media"
+    },
+    {
+        "canción": "Bohemian Rhapsody",
+        "autor": "Queen",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fbohemian_rhapsody.jpg?alt=media"
+    },
+    {
+        "canción": "Corazón Vacío ",
+        "autor": "Maria Becerra",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fcorazon_vacio.jpg?alt=media"
+    },
+    {
+        "canción": "Canguro",
+        "autor": "Wos",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fcanguro.jpg?alt=media"
+    },
+    {
+        "canción": "Sugar",
+        "autor": "Maroon 5",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fsugar.jpg?alt=media"
+    },
+    {
+        "canción": "Story of My Life",
+        "autor": "One Direction",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fstory_of_my_life.jpg?alt=media"
+    },
+    {
+        "canción": "Buenos Aires",
+        "autor": "Nathy Peluso",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fbuenos_aires.jpg?alt=media"
+    },
+    {
+        "canción": "Si No Le Contesto",
+        "autor": "Plan B",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fsi_no_le_contesto.jpg?alt=media"
+    },
+    {
+        "canción": "Gasolina",
+        "autor": "Daddy Yankee",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fgasolina.jpg?alt=media"
+    },
+    {
+        "canción": "Toxic",
+        "autor": "Britney Spears",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Ftoxic.jpg?alt=media"
+    },
+    {
+        "canción": "Radioactive",
+        "autor": "Imagine Dragons",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fradioactive.jpg?alt=media"
+    },
+    {
+        "canción": "We Will Rock You",
+        "autor": "Queen",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fwe_will_rock_you.jpg?alt=media"
+    },
+    {
+        "canción": "Acaramelao",
+        "autor": "Maria Becerra",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Facaramelao.jpg?alt=media"
+    },
+    {
+        "canción": "Flores Amarillas",
+        "autor": "Floricienta",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fflores_amarillas.jpg?alt=media"
+    },
+    {
+        "canción": "Girls Like You",
+        "autor": "Maroon 5",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fgirls_like_you.jpg?alt=media"
+    },
+    {
+        "canción": "What Makes You Beautiful",
+        "autor": "One Direction",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fwhat_makes_you_beautiful.jpg?alt=media"
+    },
+    {
+        "canción": "Sana Sana",
+        "autor": "Nathy Peluso",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fsana_sana.jpg?alt=media"
+    },
+    {
+        "canción": "Choca",
+        "autor": "Plan B",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fchoca.jpg?alt=media"
+    },
+    {
+        "canción": "Con Calma",
+        "autor": "Daddy Yankee",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fcon_calma.jpg?alt=media"
+    },
+    {
+        "canción": "Baby One More Time",
+        "autor": "Britney Spears",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fbaby_one_more_time.jpg?alt=media"
+    },
+    {
+        "canción": "Demons",
+        "autor": "Imagine Dragons",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fdemons.jpg?alt=media"
+    },
+    {
+        "canción": "We Are the Champions",
+        "autor": "Queen",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fwe_are_the_champions.jpg?alt=media"
+    },
+    {
+        "canción": "Adiós",
+        "autor": "Maria Becerra",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fadios.jpg?alt=media"
+    },
+    {
+        "canción": "Y así será",
+        "autor": "Floricienta",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fy_asi_sera.jpg?alt=media"
+    },
+    {
+        "canción": "Doble Vida",
+        "autor": "Maria Becerra",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fdoble_vida.jpg?alt=media"
+    },
+    {
+        "canción": "Night Changes",
+        "autor": "One Direction",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fnight_changes.jpg?alt=media"
+    },
+    {
+        "canción": "Delito",
+        "autor": "Nathy Peluso",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fdelito.jpg?alt=media"
+    },
+    {
+        "canción": "Fanática Sensual",
+        "autor": "Plan B",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Ffanatica_sensual.jpg?alt=media"
+    },
+    {
+        "canción": "Dura",
+        "autor": "Daddy Yankee",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fdura.jpg?alt=media"
+    },
+    {
+        "canción": "Womanizer",
+        "autor": "Britney Spears",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fwomanizer.jpg?alt=media"
+    },
+    {
+        "canción": "Thunder",
+        "autor": "Imagine Dragons",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fthunder.jpg?alt=media"
+    },
+    {
+        "canción": "Somebody to Love",
+        "autor": "Queen",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fsomebody_to_love.jpg?alt=media"
+    },
+    {
+        "canción": "Cuando hacemos el amor",
+        "autor": "Maria Becerra",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fcuando_hacemos_el_amor.jpg?alt=media"
+    },
+    {
+        "canción": "Automatico",
+        "autor": "Maria Becerra",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fautomatico.jpg?alt=media"
+    },
+    {
+        "canción": "Payphone",
+        "autor": "Maroon 5",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fpayphone.jpg?alt=media"
+    },
+    {
+        "canción": "Best Song Ever",
+        "autor": "One Direction",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fbest_song_ever.jpg?alt=media"
+    },
+    {
+        "canción": "Business Woman",
+        "autor": "Nathy Peluso",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fbusiness_woman.jpg?alt=media"
+    },
+    {
+        "canción": "GTA.mp3",
+        "autor": "Emilia",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fgta.mp3.jpg?alt=media"
+    },
+    {
+        "canción": "Cuatro Veinte",
+        "autor": "Emilia",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fcuatro_veinte.jpg?alt=media"
+    },
+    {
+        "canción": "Angels Like You",
+        "autor": "Miley Cyrus",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fangels_like_you.jpg?alt=media"
+    },
+    {
+        "canción": "Whatever It Takes",
+        "autor": "Imagine Dragons",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fwhatever_it_takes.jpg?alt=media"
+    },
+    {
+        "canción": "Radio Ga Ga",
+        "autor": "Queen",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fradio_ga_ga.jpg?alt=media"
+    },
+    {
+        "canción": "Flowers",
+        "autor": "Miley Cyrus",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fflowers.jpg?alt=media"
+    },
+    {
+        "canción": "Arrancarmelo",
+        "autor": "Wos",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Farrancarmelo.jpg?alt=media"
+    },
+    {
+        "canción": "Animals",
+        "autor": "Maroon 5",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fanimals.jpg?alt=media"
+    },
+    {
+        "canción": "Kiss You",
+        "autor": "One Direction",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fkiss_you.jpg?alt=media"
+    },
+    {
+        "canción": "Mafiosa",
+        "autor": "Nathy Peluso",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fmafiosa.jpg?alt=media"
+    },
+    {
+        "canción": "Mi Vecinita",
+        "autor": "Plan B",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fmi_vecinita.jpg?alt=media"
+    },
+    {
+        "canción": "Andrómeda",
+        "autor": "Wos",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fandromeda.jpg?alt=media"
+    },
+    {
+        "canción": "Gimme More",
+        "autor": "Britney Spears",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fgimme_more.jpg?alt=media"
+    },
+    {
+        "canción": "Alma Dinamita",
+        "autor": "Wos",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Falma_dinamita.jpg?alt=media"
+    },
+    {
+        "canción": "Dime Como Hago",
+        "autor": "Maria Becerra",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fdime_como_hago.jpg?alt=media"
+    }
+]

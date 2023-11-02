@@ -8,7 +8,10 @@ const Stack = createNativeStackNavigator()
 
 const HeaderHome = () => {
     return (
-        <Image style={styles.logo} source={require('../logoPeque.png')} />
+        <Image
+            style={styles.logo}
+            source={{ uri: 'https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/logoPeque.png?alt=media' }}
+        />
     )
 }
 
@@ -35,8 +38,8 @@ export default HomeNavigator
 
 const styles = StyleSheet.create({
     logo: {
-        height: 40, 
-        width: '100%', 
+        height: 40,
+        width: '100%',
         resizeMode: 'contain',
         left: -15,
     },
