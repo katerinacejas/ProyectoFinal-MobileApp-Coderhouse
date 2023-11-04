@@ -1,9 +1,17 @@
 import React from 'react'
-import { Image, Text, View, FlatList, TouchableOpacity } from 'react-native'
+import { Image, Text, View, FlatList, ScrollView, RefreshControl } from 'react-native'
 import styles from './Home.style'
 import data from '../../data/ekos'
 
 const Home = () => {
+    const [refreshing, setRefreshing] = React.useState(false);
+
+    const onRefresh = React.useCallback(() => {
+        setRefreshing(true);
+        setTimeout(() => {
+            setRefreshing(false);
+        }, 2000);
+    }, []);
 
     const renderEkos = ({ item }) => (
         <View style={styles.container}>
@@ -25,7 +33,11 @@ const Home = () => {
     )
 
     return (
-        <>
+        <ScrollView
+            contentContainerStyle={styles.containerGeneral}
+            refreshControl={
+                <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+            }>
             <View style={styles.containerGeneral}>
                 <FlatList
                     data={data}
@@ -33,7 +45,7 @@ const Home = () => {
                     renderItem={renderEkos}
                 />
             </View>
-        </>
+        </ScrollView>
     )
 }
 export default Home

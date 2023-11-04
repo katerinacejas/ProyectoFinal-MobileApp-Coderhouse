@@ -1,10 +1,18 @@
 import React from 'react'
-import { Image, Text, View, TextInput, FlatList } from 'react-native'
+import { Image, Text, View, FlatList, ScrollView, RefreshControl } from 'react-native'
 import styles from './Perfil.style'
 import data from '../../data/miPerfil'
 import dataEkos from '../../data/ekos'
 
 const Perfil = () => {
+    const [refreshing, setRefreshing] = React.useState(false);
+
+    const onRefresh = React.useCallback(() => {
+        setRefreshing(true);
+        setTimeout(() => {
+            setRefreshing(false);
+        }, 2000);
+    }, []);
 
     const renderEkos = ({ item }) => (
         <View style={styles.containerEkos}>
@@ -26,7 +34,11 @@ const Perfil = () => {
     )
 
     return (
-        <>
+        <ScrollView
+            contentContainerStyle={styles.containerGeneral}
+            refreshControl={
+                <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+            }>
             <View style={styles.container}>
                 <View style={styles.perfilContainer}>
                     <View style={styles.perfilImagenContainer}>
@@ -52,7 +64,7 @@ const Perfil = () => {
                     renderItem={renderEkos}
                 />
             </View>
-        </>
+        </ScrollView>
     )
 }
 export default Perfil

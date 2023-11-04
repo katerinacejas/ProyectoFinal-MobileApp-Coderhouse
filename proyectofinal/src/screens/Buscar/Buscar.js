@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { TextInput, View, TouchableOpacity, FlatList } from 'react-native'
+import { TextInput, View, TouchableOpacity, FlatList, Image, Text } from 'react-native'
 import styles from './Buscar.style'
 import { Ionicons } from '@expo/vector-icons';
 import { colors } from '../../constants/colors'
+import { useGetCancionesQuery } from '../../services/cancionesApi';
 
 const Buscar = () => {
 
@@ -11,21 +12,15 @@ const Buscar = () => {
     const BuscarUsuario = () => {
     }
 
+    const { data, isLoading, error } = useGetCancionesQuery();
+
+
     const renderEkos = ({ item }) => (
         <View style={styles.container}>
-            <View style={styles.rightContainer}>
-                <View style={styles.perfil}>
-                    <Image source={item.icono} style={styles.icono} />
-                    <View>
-                        <Text style={styles.username}>{item.nombre}</Text>
-                        <Text style={styles.usuarioArroba}>{item.usuario}</Text>
-                    </View>
-                </View>
-                <Text style={styles.textoPosteo}>¡Está escuchando {item.cancion} de {item.autor}!</Text>
-                <Text style={styles.textoMomento}> {item.momento} </Text>
-            </View>
-            <View style={styles.leftContainer}>
-                <Image source={item.portada} style={styles.portadaMusica} />
+            <Image source={{ uri: item.urlPortada }} style={styles.portadaMusica} />
+            <View style={styles.perfil}>
+                <Text style={styles.usuarioArroba}>{item.canción}</Text>
+                <Text style={styles.usuarioArroba}>{item.autor}</Text>
             </View>
         </View>
     )
@@ -53,7 +48,8 @@ const Buscar = () => {
             <View style={styles.containerGeneral}>
                 <FlatList
                     data={data}
-                    keyExtractor={item => item.id}
+                    keyExtractor={item => item}
+                    numColumns={2}
                     renderItem={renderEkos}
                 />
             </View>

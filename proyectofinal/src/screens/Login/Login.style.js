@@ -11,7 +11,7 @@ export default styles = StyleSheet.create({
     },
     input: {
         width: '80%',
-        borderWidth: 3,
+        borderWidth: 2,
         borderColor: colors.violeta,
         borderRadius: 10,
         paddingVertical: 10,

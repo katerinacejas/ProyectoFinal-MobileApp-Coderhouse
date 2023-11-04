@@ -34,8 +34,9 @@ export default styles = StyleSheet.create({
 
 
     containerGeneral: {
-        flex: 1,
+        width: '100%',
         backgroundColor: colors.fondoClaro,
+        flex: 1,
     },
     container: {
         flexDirection: 'row',
@@ -44,73 +45,28 @@ export default styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: colors.violeta,
         borderRadius: 10,
-        margin: 10,
+        margin: 8,
         backgroundColor: colors.blanco,
+        alignItems: 'center',
+
     },
-    leftContainer: {
+    perfil: {   
+        alignItems: 'center',
+        flexDirection: 'column',
         flex: 1,
     },
-    rightContainer: {
-        flex: 2,
-    },
-    perfil: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginBottom: 10,
-    },
-    icono: {
-        width: 40,
-        height: 40,
-        borderRadius: 20,
-        marginRight: 10,
-    },
     username: {
-        fontFamily: 'meriendaRegular',
         fontSize: 16,
         color: colors.turquesa,
     },
     usuarioArroba: {
         color: colors.negro,
-        opacity: 0.7,
-    },
-    textoPosteo: {
-        fontSize: 18,
-        lineHeight: 24,
-        marginBottom: 10,
-        color: colors.negro,
+        fontSize: 16,
     },
     portadaMusica: {
         aspectRatio: 1,
         resizeMode: 'cover',
         borderRadius: 10,
-        height: 120,
+        height: 50,
     },
-    buttonContainer: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        paddingHorizontal: 20,
-        alignItems: 'center',
-        marginBottom: 10,
-        marginTop: 10,
-    },
-    button: {
-        backgroundColor: colors.turquesa,
-        borderRadius: 30,
-        paddingVertical: 10,
-        paddingHorizontal: 20,
-        flexDirection: 'row',
-        alignSelf: 'center',
-        alignItems: 'center',
-    },
-    buttonText: {
-        color: colors.negro,
-        fontWeight: 'bold',
-        marginRight: 10,
-        fontSize: sizes.botones,
-        textAlign: 'center',
-    },
-    textoMomento: {
-        color: colors.negro,
-        opacity: 0.7,
-    }
 })

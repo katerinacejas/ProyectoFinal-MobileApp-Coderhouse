@@ -1,17 +1,13 @@
 import { Home } from '../screens/'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { colors } from '../constants/colors'
-import { Image } from 'react-native'
-import { StyleSheet } from 'react-native'
+import Header from '../components/Header/Header'
 
 const Stack = createNativeStackNavigator()
 
 const HeaderHome = () => {
     return (
-        <Image
-            style={styles.logo}
-            source={{ uri: 'https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/logoPeque.png?alt=media' }}
-        />
+        <Header pantalla={"Home"}></Header>
     )
 }
 
@@ -27,6 +23,7 @@ const HomeNavigator = () => {
                 name="HomeStack"
                 component={Home}
                 options={{
+                    unmountOnBlur: true,
                     headerTitle: HeaderHome,
                     headerStyle: { backgroundColor: colors.negro }
                 }}
@@ -35,12 +32,3 @@ const HomeNavigator = () => {
     )
 }
 export default HomeNavigator
-
-const styles = StyleSheet.create({
-    logo: {
-        height: 40,
-        width: '100%',
-        resizeMode: 'contain',
-        left: -15,
-    },
-})

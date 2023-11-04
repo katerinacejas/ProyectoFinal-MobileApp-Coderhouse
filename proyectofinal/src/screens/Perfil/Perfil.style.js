@@ -28,8 +28,7 @@ export default styles = StyleSheet.create({
     },
     nombre: {
         fontSize: 20,
-        fontFamily: 'meriendaRegular',
-        color: colors.turquesa,
+        color: colors.violeta,
     },
     usuario: {
         fontSize: 16,
@@ -41,7 +40,7 @@ export default styles = StyleSheet.create({
     },
     separacion: {
         height: 2, 
-        backgroundColor: colors.violeta, 
+        backgroundColor: colors.turquesa, 
         marginTop: 20,
     },
     containerGeneral: {
@@ -53,7 +52,7 @@ export default styles = StyleSheet.create({
         flex: 1,
         padding: 10,
         borderWidth: 1,
-        borderColor: colors.violeta,
+        borderColor: colors.turquesa,
         borderRadius: 10,
         margin: 10,
         backgroundColor: colors.blanco,
@@ -76,9 +75,8 @@ export default styles = StyleSheet.create({
         marginRight: 10,
     },
     username: {
-        fontFamily: 'meriendaRegular',
         fontSize: 16,
-        color: colors.turquesa,
+        color: colors.violeta,
     },
     usuarioArroba: {
         color: colors.negro,

@@ -22,10 +22,8 @@ const BottomTabNavigator = () => {
                     headerShown: false,
                     tabBarShowLabel: false,
                     tabBarStyle: styles.barrita,
-                    tabBarHideOnKeyboard: true
+                    tabBarHideOnKeyboard: true,
                 }}>
-
-                {/* pantallas de la barrita */}
                 <BottomTab.Screen
                     name="Home"
                     component={HomeNavigator}
@@ -63,7 +61,5 @@ export default BottomTabNavigator
 const styles = StyleSheet.create({
     barrita: {
         backgroundColor: colors.negro,
-        borderTopRightRadius: 25,
-        borderTopLeftRadius: 25,
     },
 })

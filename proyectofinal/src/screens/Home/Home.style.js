@@ -12,7 +12,7 @@ export default styles = StyleSheet.create({
         flex: 1,
         padding: 10,
         borderWidth: 1,
-        borderColor: colors.violeta,
+        borderColor: colors.turquesa,
         borderRadius: 10,
         margin: 10,
         backgroundColor: colors.blanco,
@@ -35,9 +35,8 @@ export default styles = StyleSheet.create({
         marginRight: 10,
     },
     username: {
-        fontFamily: 'meriendaRegular',
         fontSize: 16,
-        color: colors.turquesa,
+        color: colors.violeta,
     },
     usuarioArroba: {
         color: colors.negro,
@@ -62,22 +61,6 @@ export default styles = StyleSheet.create({
         alignItems: 'center',
         marginBottom: 10,
         marginTop: 10,
-    },
-    button: {
-        backgroundColor: colors.turquesa,
-        borderRadius: 30,
-        paddingVertical: 10,
-        paddingHorizontal: 20,
-        flexDirection: 'row',
-        alignSelf: 'center',
-        alignItems: 'center',
-    },
-    buttonText: {
-        color: colors.negro,
-        fontWeight: 'bold',
-        marginRight: 10,
-        fontSize: sizes.botones,
-        textAlign: 'center',
     },
     textoMomento: {
         color: colors.negro,

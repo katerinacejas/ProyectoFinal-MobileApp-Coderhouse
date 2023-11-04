@@ -258,5 +258,15 @@
         "canción": "Dime Como Hago",
         "autor": "Maria Becerra",
         "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fdime_como_hago.jpg?alt=media"
+    },
+    {
+        "canción": "Quiere Beber",
+        "autor": "Anuel AA",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fquiere_beber.jpg?alt=media"
+    },
+    {
+        "canción": "Te Necesito",
+        "autor": "Anuel AA",
+        "urlPortada": "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/portadas%2Fte_necesito.jpg?alt=media"
     }
 ]
