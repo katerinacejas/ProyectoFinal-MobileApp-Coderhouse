@@ -1,8 +1,9 @@
-import React, { useState, useRef } from 'react'
+import React, { useState } from 'react'
 import { Image, Text, View, TextInput, TouchableOpacity, StatusBar } from 'react-native'
 import styles from './Register.style'
 import { useDispatch } from 'react-redux'
 import { useSignUpMutation } from '../../services/autenticacion'
+import { usePostUsuarioMutation } from '../../services/usuariosApi'
 import { Octicons } from '@expo/vector-icons'
 import { setUsuario } from '../../features/LoginReducer'
 
@@ -12,29 +13,60 @@ const Register = ({ navigation }) => {
     const [email, setEmail] = useState('')
     const [contrasenia, setContrasenia] = useState('')
     const [confirmarContrasenia, setConfirmarContrasenia] = useState('')
-
+    const fotoDePerfil = "https://firebasestorage.googleapis.com/v0/b/ekoloomcoderhouse.appspot.com/o/usuario.png?alt=media"
+    const biografia = "¡Hola! Esta es mi biografía por default."
     const [mostrarContrasenia, setMostrarContrasenia] = useState(false)
     const [mostrarConfirmarContrasenia, setMostrarConfirmarContrasenia] = useState(false)
 
-    const [triggerSignUp, result] = useSignUpMutation()
+    const [mostrarAdvContrasenia, setMostrarAdvContrasenia] = useState(false)
+    const [mostrarAdvConfirmarContraseña, setMostrarAdvConfirmarContrasenia] = useState(false)
+    const [mostrarAdvUsuario, setMostrarAdvUsuario] = useState(false)
+
+    const [triggerSignUp] = useSignUpMutation()
+    const [triggerPostUsuario, resultPostUsuario] = usePostUsuarioMutation()
+
     const dispatch = useDispatch();
 
     const funcionRegistrarse = () => {
-        if (nombreUnico === "" || contrasenia === "" || nombre === ""  || email === ""  || confirmarContrasenia === "") {
+        setMostrarAdvContrasenia(false)
+        setMostrarAdvConfirmarContrasenia(false)
+        setMostrarAdvUsuario(false)
+
+        if (nombreUnico === "" || contrasenia === "" || nombre === "" || email === "" || confirmarContrasenia === "") {
             return
         }
-        console.log(nombre, nombreUnico, email, contrasenia)
+        console.log(nombre, nombreUnico, email, contrasenia, confirmarContrasenia)
 
+        //validaciones de lo ingresado
+        if (contrasenia !== confirmarContrasenia) {
+            setMostrarAdvConfirmarContrasenia(true)
+            return
+        }
+        if (!(contrasenia.length >= 8 && /[A-Z]/.test(contrasenia) && /\d/.test(contrasenia))) {
+            setMostrarAdvContrasenia(true)
+            return
+        }
+
+        //todo lo ingresado ta ok
         triggerSignUp({
             email: email,
             password: contrasenia,
         })
-        console.log(result)
-
-        if (result.isSuccess) {
-            dispatch(setUsuario(result.data))
-        }
-
+        .unwrap()
+        .then(resultSignUp => {
+                console.log(resultSignUp)
+                triggerPostUsuario({
+                    nombre: nombre,
+                    nombreUnico: nombreUnico,
+                    email: email,
+                    timestampRegistro: new Date().toLocaleString(),
+                    biografia: biografia,
+                    fotoDePerfil: fotoDePerfil,
+                })
+                console.log(resultPostUsuario)
+                dispatch(setUsuario(resultSignUp))
+            })
+        .catch(err => console.log(err))
     }
 
     const funcionIrAIniciarSesion = () => {
@@ -45,8 +77,6 @@ const Register = ({ navigation }) => {
         setConfirmarContrasenia("")
         navigation.navigate('Login')
     }
-
-    const inputRef2 = useRef(null);
 
     return (
         <View style={styles.container}>
@@ -60,24 +90,23 @@ const Register = ({ navigation }) => {
                 style={styles.input}
                 value={nombre}
                 onChangeText={setNombre}
-                returnKeyType="next"
-                onSubmitEditing={() => inputRef2.current.focus()}
             />
             <TextInput
                 placeholder="usuario"
                 style={styles.input}
                 value={nombreUnico}
                 onChangeText={setNombreUnico}
-                returnKeyType="next"
-                onSubmitEditing={() => inputRef2.current.focus()}
+                autoCapitalize='none'
+                autoCorrect={false}
             />
             <TextInput
                 placeholder="email"
                 style={styles.input}
                 value={email}
                 onChangeText={setEmail}
-                returnKeyType="next"
-                onSubmitEditing={() => inputRef2.current.focus()}
+                keyboardType='email-address'
+                autoCapitalize='none'
+                autoCorrect={false}
             />
             <View style={styles.contraseniaView}>
                 <TextInput
@@ -86,7 +115,8 @@ const Register = ({ navigation }) => {
                     value={contrasenia}
                     onChangeText={setContrasenia}
                     secureTextEntry={!mostrarContrasenia}
-                    ref={inputRef2}
+                    autoCapitalize='none'
+                    autoCorrect={false}
                 />
                 <TouchableOpacity style={styles.iconoOjo}>
                     <Octicons
@@ -104,7 +134,8 @@ const Register = ({ navigation }) => {
                     value={confirmarContrasenia}
                     onChangeText={setConfirmarContrasenia}
                     secureTextEntry={!mostrarConfirmarContrasenia}
-                    ref={inputRef2}
+                    autoCapitalize='none'
+                    autoCorrect={false}
                 />
                 <TouchableOpacity style={styles.iconoOjo}>
                     <Octicons
@@ -123,14 +154,33 @@ const Register = ({ navigation }) => {
                 </Text>
             </TouchableOpacity>
 
-            <Text style={styles.textoTenesCuenta}>¿Ya tenes una cuenta?</Text>
-            <TouchableOpacity style={styles.botonTenesCuenta}>
-                <Text
-                    style={styles.textoBoton}
-                    onPress={funcionIrAIniciarSesion}>
-                    Iniciar Sesión
-                </Text>
-            </TouchableOpacity>
+            {/* textos en caso de que haya alguna advertencia del registro en true */}
+
+            {mostrarAdvContrasenia ? (
+                <Text style={styles.textoAdvertencia}>La contraseña debe tener al menos 8 caracteres incluyendo mayúsculas y dígitos</Text>
+            ) : (
+                null
+            )}
+            {mostrarAdvConfirmarContraseña ? (
+                <Text style={styles.textoAdvertencia}>Las contraseñas ingresadas no coinciden</Text>
+            ) : (
+                null
+            )}
+            {mostrarAdvUsuario ? (
+                <Text style={styles.textoAdvertencia}>Ese usuario ya existe</Text>
+            ) : (
+                null
+            )}
+            <View style={styles.viewTenesCuenta}>
+                <Text style={styles.textoTenesCuenta}>¿Ya tenes una cuenta?</Text>
+                <TouchableOpacity style={styles.botonTenesCuenta}>
+                    <Text
+                        style={styles.textoBoton}
+                        onPress={funcionIrAIniciarSesion}>
+                        Iniciar Sesión
+                    </Text>
+                </TouchableOpacity>
+            </View>
         </View >
     )
 }

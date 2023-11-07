@@ -4,4 +4,5 @@ export const colors = {
     violeta: '#8C6FF7',
     turquesa: '#00B4CC',
     fondoClaro: '#EFEEEE',
+    advertencia: '#FF4545',
 }

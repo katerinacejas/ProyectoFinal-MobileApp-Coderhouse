@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, Text, View, FlatList, ScrollView, RefreshControl } from 'react-native'
+import { Image, Text, View, FlatList, RefreshControl } from 'react-native'
 import styles from './Home.style'
 import data from '../../data/ekos'
 
@@ -33,19 +33,16 @@ const Home = () => {
     )
 
     return (
-        <ScrollView
-            contentContainerStyle={styles.containerGeneral}
-            refreshControl={
-                <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-            }>
-            <View style={styles.containerGeneral}>
-                <FlatList
-                    data={data}
-                    keyExtractor={item => item.id}
-                    renderItem={renderEkos}
-                />
-            </View>
-        </ScrollView>
+        <View style={styles.containerGeneral}>
+            <FlatList
+                data={data}
+                keyExtractor={item => item.id}
+                renderItem={renderEkos}
+                refreshControl={
+                    <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+                }
+            />
+        </View>
     )
 }
 export default Home

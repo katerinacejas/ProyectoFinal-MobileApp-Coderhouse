@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, Text, View, FlatList, ScrollView, RefreshControl } from 'react-native'
+import { Image, Text, View, FlatList, RefreshControl } from 'react-native'
 import styles from './Perfil.style'
 import data from '../../data/miPerfil'
 import dataEkos from '../../data/ekos'
@@ -34,11 +34,7 @@ const Perfil = () => {
     )
 
     return (
-        <ScrollView
-            contentContainerStyle={styles.containerGeneral}
-            refreshControl={
-                <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-            }>
+        <>
             <View style={styles.container}>
                 <View style={styles.perfilContainer}>
                     <View style={styles.perfilImagenContainer}>
@@ -62,9 +58,12 @@ const Perfil = () => {
                     data={dataEkos}
                     keyExtractor={item => item.id}
                     renderItem={renderEkos}
+                    refreshControl={
+                        <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+                    }
                 />
             </View>
-        </ScrollView>
+        </>
     )
 }
 export default Perfil

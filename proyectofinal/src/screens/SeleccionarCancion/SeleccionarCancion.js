@@ -1,21 +1,21 @@
 import React, { useState } from 'react'
 import { TextInput, View, TouchableOpacity, FlatList, Image, Text } from 'react-native'
-import styles from './Buscar.style'
+import styles from './SeleccionarCancion.style'
 import { Ionicons } from '@expo/vector-icons';
 import { colors } from '../../constants/colors'
 import { useGetCancionesQuery } from '../../services/cancionesApi';
 
-const Buscar = () => {
+const SeleccionarCancion = () => {
 
-    const [usuarioABuscar, setUsuarioABuscar] = useState('')
+    const [cancionABuscar, setCancionABuscar] = useState('')
 
-    const BuscarUsuario = () => {
+    const BuscarCancion = () => {
     }
 
     const { data, isLoading, error } = useGetCancionesQuery();
 
 
-    const renderUsuarios = ({ item }) => (
+    const renderCanciones = ({ item }) => (
         <View style={styles.container}>
             <Image source={{ uri: item.urlPortada }} style={styles.portadaMusica} />
             <View style={styles.perfil}>
@@ -30,16 +30,16 @@ const Buscar = () => {
             <View style={styles.viewBusqueda}>
                 <TextInput
                     style={styles.barraBusqueda}
-                    placeholder="@ buscar"
-                    value={usuarioABuscar}
-                    onChangeText={setUsuarioABuscar}
+                    placeholder="Estoy escuchando..."
+                    value={cancionABuscar}
+                    onChangeText={setCancionABuscar}
                 />
                 <TouchableOpacity style={styles.iconoLupa}>
                     <Ionicons
                         name="search"
                         size={25}
                         color={colors.negro}
-                        onPress={BuscarUsuario}
+                        onPress={BuscarCancion}
                     />
                 </TouchableOpacity>
             </View>
@@ -47,13 +47,11 @@ const Buscar = () => {
                 <FlatList
                     data={data}
                     keyExtractor={item => item.id}
-                    numColumns={1}
-                    renderItem={renderUsuarios}
+                    numColumns={2}
+                    renderItem={renderCanciones}
                 />
             </View>
-
-
         </View>
     )
 }
-export default Buscar
+export default SeleccionarCancion

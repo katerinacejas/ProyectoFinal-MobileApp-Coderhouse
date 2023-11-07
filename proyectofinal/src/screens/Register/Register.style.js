@@ -5,7 +5,6 @@ import { sizes } from '../../constants/sizes'
 export default styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: colors.negro,
     },
@@ -29,7 +28,7 @@ export default styles = StyleSheet.create({
         shadowOpacity: 0.8,
         shadowRadius: 4,
         elevation: 5,
-        marginTop: 15,
+        marginTop: 10,
     },
     textoBoton: {
         color: colors.negro,
@@ -40,13 +39,14 @@ export default styles = StyleSheet.create({
         width: '60%', 
         height: 200, 
         resizeMode: 'contain', 
-        marginTop: '30%',
+        marginTop: '20%',
     },
     textoTenesCuenta: {
         fontSize: sizes.inputs,
         color: colors.blanco,
-        paddingTop: '20%',
+        marginTop: '5%',
         fontFamily: 'meriendaRegular',
+        
     },
     botonTenesCuenta: {
         backgroundColor: colors.turquesa,
@@ -57,7 +57,13 @@ export default styles = StyleSheet.create({
         shadowOpacity: 0.8,
         shadowRadius: 4,
         elevation: 5,
-        marginTop: 15,
+        marginTop: 10,
+    },
+    viewTenesCuenta:{
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        bottom: 0,
     },
     contraseniaView: {
         flexDirection: 'row',
@@ -67,5 +73,11 @@ export default styles = StyleSheet.create({
         right: 15,
         top: '50%', 
         transform: [{ translateY: -15 }],
-    }
+    },
+    textoAdvertencia:{
+        fontSize: sizes.advertencias,
+        color: colors.advertencia,
+        marginTop: 5,
+        padding: 15,
+    },
 })

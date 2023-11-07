@@ -71,4 +71,40 @@ export default styles = StyleSheet.create({
         alignSelf: 'flex-end', 
         maxWidth: 200, 
     },
+    containerCancion: {
+        flexDirection: 'row',
+        flex: 1,
+        padding: 10,
+        borderWidth: 1,
+        borderColor: colors.violeta,
+        borderRadius: 10,
+        margin: 8,
+        backgroundColor: colors.blanco,
+        alignItems: 'center',
+    },
+    portadaMusica: {
+        aspectRatio: 1,
+        resizeMode: 'contain',
+        borderRadius: 10,
+        maxHeight: 50,
+    },
+    usuarioArroba: {
+        color: colors.negro,
+        fontSize: 16,
+    },
+    perfil: {   
+        alignItems: 'center',
+        flexDirection: 'column',
+        flex: 1,
+    },
+    containerGeneralCancion: {
+        width: '100%',
+        backgroundColor: colors.fondoClaro,
+        flex: 1,
+    },
+    viewGeneral: {
+        flex: 1,
+        alignItems: 'center',
+        backgroundColor: colors.fondoClaro,
+    },
 })

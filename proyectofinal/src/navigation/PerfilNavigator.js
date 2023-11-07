@@ -4,6 +4,11 @@ import { colors } from '../constants/colors'
 import Header from '../components/Header/Header'
 import { TouchableOpacity } from 'react-native'
 import { Ionicons } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
+import React from 'react'
+import { useDispatch } from 'react-redux'
+import { clearUsuario } from '../features/LoginReducer'
+import { deleteSession } from '../db'
 
 const Stack = createNativeStackNavigator()
 
@@ -14,6 +19,13 @@ const HeaderPerfil = () => {
 }
 
 const PerfilNavigator = () => {
+    const dispatch = useDispatch()
+
+    const cerrarSesion = () => {
+        dispatch(clearUsuario())
+        deleteSession()
+    }
+
     return (
         <Stack.Navigator
             initialRouteName="PerfilStack"
@@ -30,11 +42,20 @@ const PerfilNavigator = () => {
                     unmountOnBlur: true,
                     headerLeft: () => (
                         <TouchableOpacity>
-                            <Ionicons 
-                                name="chevron-back" 
-                                size={24} 
-                                color="white" 
-                                onPress={() => navigation.navigate('Home')}/>
+                            <Ionicons
+                                name="chevron-back"
+                                size={24}
+                                color="white"
+                                onPress={() => navigation.navigate('Home')} />
+                        </TouchableOpacity>
+                    ),
+                    headerRight: () => (
+                        <TouchableOpacity>
+                            <AntDesign
+                                name="logout"
+                                size={24}
+                                color="white"
+                                onPress={cerrarSesion} />
                         </TouchableOpacity>
                     ),
                 })}

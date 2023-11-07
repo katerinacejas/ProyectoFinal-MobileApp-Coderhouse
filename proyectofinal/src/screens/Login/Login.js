@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux'
 import { Octicons } from '@expo/vector-icons'
 import { useLoginMutation } from '../../services/autenticacion'
 import { setUsuario } from '../../features/LoginReducer'
+import { insertSession } from '../../db'
 
 const Login = ({ navigation }) => {
     const [email, setEmail] = useState('')
@@ -12,7 +13,7 @@ const Login = ({ navigation }) => {
 
     const [mostrarContrasenia, setMostrarContrasenia] = useState(false)
 
-    const [triggerLogin, result] = useLoginMutation()
+    const [triggerLogin] = useLoginMutation()
     const dispatch = useDispatch();
 
     const funcionIniciarSesion = () => {
@@ -25,12 +26,18 @@ const Login = ({ navigation }) => {
             email: email,
             password: contrasenia,
         })
-        console.log(result)
-
-        if (result.isSuccess) {
-            dispatch(setUsuario(result.data))
-        }
-
+        .unwrap()
+        .then(result => {
+            dispatch(setUsuario(result))
+            console.log("llegue hasta aca en login post dispatch")
+            insertSession({
+                localId: result.localId,
+                email: result.email,
+                token: result.idToken,
+            })
+            console.log("llegue hasta aca post insert session")
+        })
+        .catch(error => console.log(error.message))
     }
 
     const funcionIrARegistrarse = () => {
@@ -38,7 +45,7 @@ const Login = ({ navigation }) => {
         setContrasenia("")
         navigation.navigate('Register')
     }
-   
+
     const inputRef2 = useRef(null);
 
     return (
@@ -55,6 +62,9 @@ const Login = ({ navigation }) => {
                 onChangeText={setEmail}
                 returnKeyType="next"
                 onSubmitEditing={() => inputRef2.current.focus()}
+                keyboardType='email-address'
+                autoCapitalize='none'
+                autoCorrect={false}
             />
             <View style={styles.contraseniaView}>
                 <TextInput
@@ -64,13 +74,15 @@ const Login = ({ navigation }) => {
                     onChangeText={setContrasenia}
                     secureTextEntry={!mostrarContrasenia}
                     ref={inputRef2}
+                    autoCapitalize='none'
+                    autoCorrect={false}
                 />
                 <TouchableOpacity style={styles.iconoOjo}>
-                    <Octicons 
+                    <Octicons
                         name={mostrarContrasenia ? 'eye-closed' : 'eye'}
-                        size={20} 
-                        color="black" 
-                        onPress={() => setMostrarContrasenia(!mostrarContrasenia)} 
+                        size={20}
+                        color="black"
+                        onPress={() => setMostrarContrasenia(!mostrarContrasenia)}
                     />
                 </TouchableOpacity>
             </View>
