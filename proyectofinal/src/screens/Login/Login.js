@@ -34,6 +34,7 @@ const Login = ({ navigation }) => {
                 localId: result.localId,
                 email: result.email,
                 token: result.idToken,
+                nombreUnico: result.nombreUnico,
             })
             console.log("llegue hasta aca post insert session")
         })

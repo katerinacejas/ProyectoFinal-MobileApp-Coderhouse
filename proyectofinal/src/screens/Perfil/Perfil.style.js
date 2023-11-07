@@ -9,33 +9,30 @@ export default styles = StyleSheet.create({
     },
     perfilContainer: {
         flexDirection: 'row',
-        alignItems: 'flex-start',
     },
     perfilImagenContainer: {
-        width: 135,
-        height: 135,
+        width: 80,
+        height: 80,
         borderRadius: 50,
-        overflow: 'hidden',
+
     },
     perfilImagen: {
         width: '100%',
         height: '100%',
         resizeMode: 'cover',
-    },
-    infoUsuarioContainer: {
-        flex: 1,
-        marginLeft: 20,
+        borderRadius: 50,
     },
     nombre: {
         fontSize: 20,
         color: colors.violeta,
     },
     usuario: {
-        fontSize: 16,
+        fontSize: 18,
         color: colors.negro,
     },
     biografia: {
-        marginTop: 10,
+        fontSize: 16,
+        marginTop: 15,
         color: colors.negro,
     },
     separacion: {
@@ -93,5 +90,24 @@ export default styles = StyleSheet.create({
         resizeMode: 'cover',
         borderRadius: 10,
         height: 120,
+    },
+    nombresYEditar:{
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    nombres: {
+        marginRight: 30,
+    },
+    editar: {
+        padding: 5,
+        borderRadius: 50,
+        backgroundColor: colors.blanco,
+        borderColor: colors.violeta,
+        borderWidth: 1,
+    },
+    infoUsuarioContainer: {
+        flex: 1,
+        marginLeft: 20,
     },
 })

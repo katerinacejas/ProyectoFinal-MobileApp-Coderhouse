@@ -5,7 +5,8 @@ import { useDispatch } from 'react-redux'
 import { useSignUpMutation } from '../../services/autenticacion'
 import { usePostUsuarioMutation } from '../../services/usuariosApi'
 import { Octicons } from '@expo/vector-icons'
-import { setUsuario } from '../../features/LoginReducer'
+import { setUsuario, setNombrePersona, setNombreUnicoPersona } from '../../features/LoginReducer'
+
 
 const Register = ({ navigation }) => {
     const [nombre, setNombre] = useState('')
@@ -48,13 +49,15 @@ const Register = ({ navigation }) => {
         }
 
         //todo lo ingresado ta ok
+
+
         triggerSignUp({
             email: email,
             password: contrasenia,
         })
-        .unwrap()
-        .then(resultSignUp => {
-                console.log(resultSignUp)
+            .unwrap()
+            .then(resultSignUp => {
+                console.log("resultSignUp", resultSignUp)
                 triggerPostUsuario({
                     nombre: nombre,
                     nombreUnico: nombreUnico,
@@ -62,11 +65,16 @@ const Register = ({ navigation }) => {
                     timestampRegistro: new Date().toLocaleString(),
                     biografia: biografia,
                     fotoDePerfil: fotoDePerfil,
+                    localId: resultSignUp.localId,
                 })
-                console.log(resultPostUsuario)
+                console.log("resultPostUsuario", resultPostUsuario)
                 dispatch(setUsuario(resultSignUp))
+                console.log("EL NOMBRE ES: ", nombre)
+                dispatch(setNombrePersona(nombre))
+                console.log("EL NOMBRE UNICO ES: ", nombreUnico)
+                dispatch(setNombreUnicoPersona(nombreUnico))
             })
-        .catch(err => console.log(err))
+            .catch(err => console.log(err))
     }
 
     const funcionIrAIniciarSesion = () => {

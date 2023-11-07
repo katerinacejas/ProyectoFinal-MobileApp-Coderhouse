@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux'
 import { fetchSession } from '../db'
 
 const NavigationGeneral = () => {
-    const { email } = useSelector(state => state.login)
+    const { localId } = useSelector(state => state.login)
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -24,7 +24,7 @@ const NavigationGeneral = () => {
         })()
     }, [])
 
-    return (email ? (
+    return (localId ? (
         <BottomTabNavigator />
     ) : (
         <AutenticacionStackNavigator />

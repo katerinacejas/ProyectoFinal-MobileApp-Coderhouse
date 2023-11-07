@@ -24,7 +24,7 @@ const Ekear = () => {
 
     return (
         <>
-            {/* <View style={styles.container}>
+            <View style={styles.container}>
                 <View style={styles.ekoContainer}>
                     <Image
                         source={require('../../data/usuario.png')}
@@ -50,7 +50,7 @@ const Ekear = () => {
                     size={24}
                     color="black"
                     onPress={seleccionarCancion} />
-            </TouchableOpacity> */}
+            </TouchableOpacity>
             <View style={styles.viewGeneral}>
                 <View style={styles.containerGeneralCancion}>
                     <View style={styles.containerCancion}>
@@ -64,13 +64,13 @@ const Ekear = () => {
                 </View>
             </View>
 
-            {/* <TouchableOpacity style={styles.botonEkear}>
+            <TouchableOpacity style={styles.botonEkear}>
                 <Text
                     style={styles.textoBoton}
                     onPress={seleccionarCancion}>
                     Ekear!
                 </Text>
-            </TouchableOpacity> */}
+            </TouchableOpacity>
         </>
     )
 }

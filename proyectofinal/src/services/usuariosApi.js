@@ -7,7 +7,7 @@ export const usuariosApi = createApi({
     endpoints: (builder) => ({
         postUsuario: builder.mutation({
             query: ({ ...usuario }) => ({
-                url: `usuarios/${usuario.nombreUnico}.json`,
+                url: `usuarios/${usuario.localId}.json`,
                 method: 'POST',
                 body: usuario,
             }),
@@ -16,9 +16,25 @@ export const usuariosApi = createApi({
             query: () => `usuarios.json/`,
         }),
         getUsuario: builder.query({
-            query: nombreUnico => `usuarios.json/${nombreUnico}.json`,
+            query: localId => `usuarios/${localId}.json/`,
         }),
+        getFotoDePerfil: builder.query({
+            // query: localId => `fotosDePerfil/${localId}.json`,
+            query: () => "image.json",
+        }),
+        postFotoDePerfil: builder.mutation({
+            query: (imagen) => ({
+                url: "image.json",
+                method: "PUT",
+                body: imagen
+            })
+            // query: ({ imagen, localId }) => ({
+            //     url: `fotosDePerfil/${localId}.json`,
+            //     method: 'POST',
+            //     body: imagen,
+            // }),
+        })
     })
 })
 
-export const { usePostUsuarioMutation, useGetTodosUsuariosQuery, useGetUsuarioQuery } = usuariosApi
+export const { usePostUsuarioMutation, useGetTodosUsuariosQuery, useGetUsuarioQuery, useGetFotoDePerfilQuery, usePostFotoDePerfilMutation } = usuariosApi
