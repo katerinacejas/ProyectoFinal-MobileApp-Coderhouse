@@ -44,12 +44,7 @@ const Buscar = () => {
                 </TouchableOpacity>
             </View>
             <View style={styles.containerGeneral}>
-                <FlatList
-                    data={data}
-                    keyExtractor={item => item.id}
-                    numColumns={1}
-                    renderItem={renderUsuarios}
-                />
+                <Text style={styles.textoProximamente}>¡Proximamente!</Text>
             </View>
 
 

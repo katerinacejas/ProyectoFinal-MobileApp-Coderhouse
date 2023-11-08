@@ -36,13 +36,13 @@ export const usuariosApi = createApi({
         }),
         postEko: builder.mutation({
             query: (eko) => ({
-                url: `ekos/${eko.localId}.json/`,
+                url: `ekos/${eko.localId}.json`,
                 method: "POST",
                 body: eko.infoCancionAEkear
             })
         }),
         getEkos: builder.query({
-            query: () => "ekos.json",
+            query: localId => `ekos/${localId}.json`,
         }),
     })
 })

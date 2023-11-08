@@ -1,10 +1,18 @@
 import React from 'react'
 import { Image, Text, View, FlatList, RefreshControl } from 'react-native'
 import styles from './Home.style'
-import data from '../../data/ekos'
+import { useGetEkosQuery } from '../../services/usuariosApi'
+import { useSelector } from 'react-redux'
+import { useGetFotoDePerfilQuery } from '../../services/usuariosApi'
 
 const Home = () => {
     const [refreshing, setRefreshing] = React.useState(false);
+
+    const localId = useSelector(state => state.login.localId)
+    const { data, isLoading } = useGetEkosQuery(localId);
+    const dataArr = Object.values(data)
+    //console.log(dataArr)
+    const email = useSelector(state => state.login.email)
 
     const onRefresh = React.useCallback(() => {
         setRefreshing(true);
@@ -13,30 +21,32 @@ const Home = () => {
         }, 2000);
     }, []);
 
-    const renderEkos = ({ item }) => (
-        <View style={styles.container}>
-            <View style={styles.rightContainer}>
-                <View style={styles.perfil}>
-                    <Image source={item.icono} style={styles.icono} />
-                    <View>
-                        <Text style={styles.username}>{item.nombre}</Text>
-                        <Text style={styles.usuarioArroba}>{item.usuario}</Text>
+    const renderEkos = ({ item }) => {
+        console.log(item)
+        const autor = item[0].autor;
+        const cancion = item[0].canción;
+        const urlPortada = item[0].urlPortada;
+        console.log(autor)
+        return (
+            <View style={styles.container}>
+                <View style={styles.rightContainer}>
+                    <View style={styles.perfil}>
+                        <Text style={styles.username}> { email }</Text>
                     </View>
+                    <Text style={styles.textoPosteo}>¡Está escuchando { cancion } de { autor }!</Text>
                 </View>
-                <Text style={styles.textoPosteo}>¡Está escuchando {item.cancion} de {item.autor}!</Text>
-                <Text style={styles.textoMomento}> {item.momento} </Text>
+                <View style={styles.leftContainer}>
+                    <Image source={{ uri: urlPortada }} style={styles.portadaMusica} />
+                </View>
             </View>
-            <View style={styles.leftContainer}>
-                <Image source={item.portada} style={styles.portadaMusica} />
-            </View>
-        </View>
-    )
+        )
+    }
 
     return (
         <View style={styles.containerGeneral}>
             <FlatList
-                data={data}
-                keyExtractor={item => item.id}
+                data={dataArr}
+                keyExtractor={item => item.canción}
                 renderItem={renderEkos}
                 refreshControl={
                     <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />

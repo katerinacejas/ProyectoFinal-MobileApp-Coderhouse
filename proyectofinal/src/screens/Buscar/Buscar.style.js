@@ -66,4 +66,9 @@ export default styles = StyleSheet.create({
         borderRadius: 10,
         height: 50,
     },
+    textoProximamente: {
+        fontSize: 28,
+        alignSelf: 'center',
+        marginTop: '45%',
+    },
 })
