@@ -8,7 +8,10 @@ export const cancionesApi = createApi({
         getCanciones: builder.query({
             query: () => `infoCancion.json`,
         }),
+        getUnaCancion: builder.query({
+            query: (id) => `infoCancion/${id}.json/`,
+        }),
     }),
 })
 
-export const { useGetCancionesQuery } = cancionesApi
+export const { useGetCancionesQuery, useGetUnaCancionQuery } = cancionesApi

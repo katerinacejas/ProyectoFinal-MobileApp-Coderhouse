@@ -33,8 +33,18 @@ export const usuariosApi = createApi({
             //     method: 'POST',
             //     body: imagen,
             // }),
-        })
+        }),
+        postEko: builder.mutation({
+            query: (eko) => ({
+                url: `ekos/${eko.localId}.json/`,
+                method: "POST",
+                body: eko.infoCancionAEkear
+            })
+        }),
+        getEkos: builder.query({
+            query: () => "ekos.json",
+        }),
     })
 })
 
-export const { usePostUsuarioMutation, useGetTodosUsuariosQuery, useGetUsuarioQuery, useGetFotoDePerfilQuery, usePostFotoDePerfilMutation } = usuariosApi
+export const { useGetEkosQuery, usePostEkoMutation, usePostUsuarioMutation, useGetTodosUsuariosQuery, useGetUsuarioQuery, useGetFotoDePerfilQuery, usePostFotoDePerfilMutation } = usuariosApi
