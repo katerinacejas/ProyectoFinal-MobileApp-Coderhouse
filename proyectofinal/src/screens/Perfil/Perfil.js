@@ -8,6 +8,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import { usePostFotoDePerfilMutation } from '../../services/usuariosApi'
 import { setImagen } from '../../features/LoginReducer'
 import { useGetFotoDePerfilQuery } from '../../services/usuariosApi'
+import { useGetEkosQuery } from '../../services/usuariosApi'
 
 const Perfil = () => {
     const [refreshing, setRefreshing] = React.useState(false);
@@ -24,6 +25,9 @@ const Perfil = () => {
     const { data, isLoading, error, refetch } = useGetFotoDePerfilQuery();
     const [triggerGuardarFotoDePerfil, result] = usePostFotoDePerfilMutation()
     const dispatch = useDispatch()
+
+    const { dataEkos } = useGetEkosQuery(localId);
+    const dataArr = Object.values(dataEkos)
 
     const tomarFoto = async () => {
         const verificacionPermisos = await ImagePicker.requestCameraPermissionsAsync()
@@ -48,23 +52,27 @@ const Perfil = () => {
         }
 
     }
-    const renderEkos = ({ item }) => (
-        <View style={styles.containerEkos}>
-            <View style={styles.rightContainer}>
-                <View style={styles.perfil}>
-                    <Image source={item.icono} style={styles.icono} />
-                    <View>
-                        <Text style={styles.username}>{email}</Text>
+
+    const renderEkos = ({ item }) => {
+        console.log(item)
+        const autor = item[0].autor;
+        const cancion = item[0].canción;
+        const urlPortada = item[0].urlPortada;
+        console.log(autor)
+        return (
+            <View style={styles.container}>
+                <View style={styles.rightContainer}>
+                    <View style={styles.perfil}>
+                        <Text style={styles.username}> {email}</Text>
                     </View>
+                    <Text style={styles.textoPosteo}>¡Está escuchando {cancion} de {autor}!</Text>
                 </View>
-                <Text style={styles.textoPosteo}>¡Está escuchando {item.cancion} de {item.autor}!</Text>
-                <Text style={styles.textoMomento}> {item.momento} </Text>
+                <View style={styles.leftContainer}>
+                    <Image source={{ uri: urlPortada }} style={styles.portadaMusica} />
+                </View>
             </View>
-            <View style={styles.leftContainer}>
-                <Image source={item.portada} style={styles.portadaMusica} />
-            </View>
-        </View>
-    )
+        )
+    }
 
     return (
         <>
@@ -95,15 +103,15 @@ const Perfil = () => {
             </View>
 
             <View style={styles.containerGeneral}>
-                <FlatList
-                    data={dataEkos}
-                    keyExtractor={item => item.id}
-                    renderItem={renderEkos}
-                    refreshControl={
-                        <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-                    }
-                />
-            </View>
+            <FlatList
+                data={dataArr}
+                keyExtractor={item => item.canción}
+                renderItem={renderEkos}
+                refreshControl={
+                    <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+                }
+            />
+        </View>
         </>
     )
 }
