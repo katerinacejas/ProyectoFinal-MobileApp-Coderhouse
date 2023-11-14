@@ -13,7 +13,7 @@ export default styles = StyleSheet.create({
         borderWidth: 2,
         borderColor: colors.violeta,
         borderRadius: 10,
-        padding: 10,
+        padding: 8,
         marginBottom: 10,
         fontSize: sizes.inputs,
         backgroundColor: colors.blanco,
@@ -21,7 +21,7 @@ export default styles = StyleSheet.create({
     },
     botonRegistrarse: {
         backgroundColor: colors.turquesa,
-        padding: 10,
+        padding: 8,
         borderRadius: 10,
         shadowColor: colors.blanco,
         shadowOffset: { width: 0, height: 2 },
@@ -37,18 +37,16 @@ export default styles = StyleSheet.create({
     logo: {
         width: '60%', 
         height: '20%',
-        resizeMode: 'contain', 
-        marginTop: 40,
+        resizeMode: 'contain',
     },
     textoTenesCuenta: {
         fontSize: sizes.inputs,
         color: colors.blanco,
         fontFamily: 'meriendaRegular',
-        marginTop: 10,
     },
     botonTenesCuenta: {
         backgroundColor: colors.turquesa,
-        padding: 10,
+        padding: 8,
         borderRadius: 10,
         shadowColor: colors.blanco,
         shadowOffset: { width: 0, height: 2 },
