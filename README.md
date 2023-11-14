@@ -18,7 +18,7 @@ En la base de datos hay pre-establecidas las canciones que la aplicación recono
 
 Se guarda en RealtimeDatabase la informacion de cada usuario como su email, localId, nombre, timestamp del momento del registro y foto de perfil inicial. 
 
-Al momento de registrarse se le asigna la foto de perfil por default de la aplicacion. Luego puede modificarla.
+Al momento de registrarse se le asigna la foto de perfil por default de la aplicacion. Luego puede modificarla
 
 Tambien se almacenan en Realtime Database cada eko (publicacion) que tiene anidada la informacion de la cancion seleccionada y el localId que la publicó, al igual que las imagenes de foto de perfil que actualicen posteriormente.
 
@@ -33,7 +33,7 @@ Tambien se almacenan en Realtime Database cada eko (publicacion) que tiene anida
 * Se utilizan listas optimizadas para poder mostrar las canciones y las publicaciones.
 * Se utilizan componentes reutilizables como ser la barra de busqueda y el header.
 * Hay 2 tipos de navegacion, la navegacion de la barra inferior "bottom tab navigator" para desplazarse entre las 4 secciones principales, y tambien hay navegacion entrre las pantallas de login y registro, ya que se puede ir de una a la otra en caso de ya tener una cuenta. Además, tambien hay navegacion entre las distintas secciones mediante el bottom back del header que te desplazan a la pantalla de Home.
-* En la pantalla de Mi Perfil se encuentra el botón de cerrar sesion en la parte del header a la derecha.
+* En la pantalla de Mi Perfil se encuentra el botón de cerrar sesion en la parte edl header a la derecha.
 * La autenticacion es mediante email y contraseña. Se valida que la contraseña sea de minimamente 8 caracteres de los cuales al menos 1 debe ser un digito y una mayuscula. Se valida que la contraseña y el campo de confirmar contraseña coincidan. En caso de que alguna de las verificaciones no se cumpla, figura un aviso de advertencia al usuario.
 * Se solicitan los permisos correspondientes para poder acceder a la camara del usuario y poder modificar la foto de perfil.
 
