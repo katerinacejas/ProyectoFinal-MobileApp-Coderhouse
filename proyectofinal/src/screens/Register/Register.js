@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Image, Text, View, TextInput, TouchableOpacity, StatusBar } from 'react-native'
+import { Image, Text, View, TextInput, TouchableOpacity, StatusBar, Alert } from 'react-native'
 import styles from './Register.style'
 import { useDispatch } from 'react-redux'
 import { useSignUpMutation } from '../../services/autenticacion'
@@ -41,10 +41,27 @@ const Register = ({ navigation }) => {
         //validaciones de lo ingresado
         if (contrasenia !== confirmarContrasenia) {
             setMostrarAdvConfirmarContrasenia(true)
+            Alert.alert('Contraseña inválida', 'Contraseñas no coinciden');
             return
         }
-        if (!(contrasenia.length >= 8 && /[A-Z]/.test(contrasenia) && /\d/.test(contrasenia))) {
+        // if (!(contrasenia.length >= 8 && /[A-Z]/.test(contrasenia) && /\d/.test(contrasenia))) {
+        //     setMostrarAdvContrasenia(true)
+        //     Alert.alert('La contraseña debe tener al menos 8 caracteres incluyendo mayúsculas y dígitos');
+        //     return
+        // }
+        if (!(contrasenia.length >= 8)) {
             setMostrarAdvContrasenia(true)
+            Alert.alert('Contraseña inválida', 'Debe tener mínimo 8 caracteres');
+            return
+        }
+        if (!(/[A-Z]/.test(contrasenia))) {
+            setMostrarAdvContrasenia(true)
+            Alert.alert('Contraseña inválida', 'Debe tener mínimo 1 mayus');
+            return
+        }
+        if (!(/\d/.test(contrasenia))) {
+            setMostrarAdvContrasenia(true)
+            Alert.alert('Contraseña inválida', 'Debe tener mínimo 1 dígito');
             return
         }
 
@@ -164,7 +181,7 @@ const Register = ({ navigation }) => {
 
             {/* textos en caso de que haya alguna advertencia del registro en true */}
 
-            {mostrarAdvContrasenia ? (
+            {/* {mostrarAdvContrasenia ? (
                 <Text style={styles.textoAdvertencia}>La contraseña debe tener al menos 8 caracteres incluyendo mayúsculas y dígitos</Text>
             ) : (
                 null
@@ -173,12 +190,7 @@ const Register = ({ navigation }) => {
                 <Text style={styles.textoAdvertencia}>Las contraseñas ingresadas no coinciden</Text>
             ) : (
                 null
-            )}
-            {mostrarAdvUsuario ? (
-                <Text style={styles.textoAdvertencia}>Ese usuario ya existe</Text>
-            ) : (
-                null
-            )}
+            )} */}
             <View style={styles.viewTenesCuenta}>
                 <Text style={styles.textoTenesCuenta}>¿Ya tenes una cuenta?</Text>
                 <TouchableOpacity style={styles.botonTenesCuenta}>

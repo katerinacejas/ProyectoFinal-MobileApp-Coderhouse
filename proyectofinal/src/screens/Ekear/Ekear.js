@@ -51,7 +51,7 @@ const Ekear = () => {
         });
         console.log("ya ekee ", infoCancionAEkear)
         setCancionSeleccionada(null)
-        Alert.alert('Ekeado!');
+        Alert.alert('Ekeado!', 'Se ha publicado tu canción exitosamente');
     }
 
     const deseleccionarCancion = (id) => {

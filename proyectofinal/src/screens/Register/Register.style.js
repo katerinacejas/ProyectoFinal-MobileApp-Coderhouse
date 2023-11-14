@@ -28,7 +28,6 @@ export default styles = StyleSheet.create({
         shadowOpacity: 0.8,
         shadowRadius: 4,
         elevation: 5,
-        marginTop: 10,
     },
     textoBoton: {
         color: colors.negro,
@@ -37,16 +36,15 @@ export default styles = StyleSheet.create({
     },
     logo: {
         width: '60%', 
-        height: 200, 
+        height: '20%',
         resizeMode: 'contain', 
-        marginTop: '20%',
+        marginTop: 40,
     },
     textoTenesCuenta: {
         fontSize: sizes.inputs,
         color: colors.blanco,
-        marginTop: '5%',
         fontFamily: 'meriendaRegular',
-        
+        marginTop: 10,
     },
     botonTenesCuenta: {
         backgroundColor: colors.turquesa,
@@ -57,7 +55,7 @@ export default styles = StyleSheet.create({
         shadowOpacity: 0.8,
         shadowRadius: 4,
         elevation: 5,
-        marginTop: 10,
+        marginTop: 5,
     },
     viewTenesCuenta:{
         flex: 1,

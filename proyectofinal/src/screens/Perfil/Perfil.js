@@ -1,12 +1,10 @@
 import { Image, Text, View, FlatList, RefreshControl, TouchableOpacity } from 'react-native'
 import styles from './Perfil.style'
-import dataEkos from '../../data/ekos'
 import { useSelector, useDispatch } from 'react-redux'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
 import * as ImagePicker from 'expo-image-picker'
 import { FontAwesome } from '@expo/vector-icons';
 import { usePostFotoDePerfilMutation } from '../../services/usuariosApi'
-import { setImagen } from '../../features/LoginReducer'
 import { useGetFotoDePerfilQuery } from '../../services/usuariosApi'
 import { useGetEkosQuery } from '../../services/usuariosApi'
 
@@ -21,13 +19,13 @@ const Perfil = () => {
 
     const email = useSelector(state => state.login.email)
     const localId = useSelector(state => state.login.localId)
-    const imagen = useSelector(state => state.login.imagen)
     const { data, isLoading, error, refetch } = useGetFotoDePerfilQuery();
     const [triggerGuardarFotoDePerfil, result] = usePostFotoDePerfilMutation()
-    const dispatch = useDispatch()
+
 
     const { dataEkos } = useGetEkosQuery(localId);
-    const dataArr = Object.values(dataEkos)
+    // const dataArr = Object.values(dataEkos)
+    const [dataArr, setDataArr] = useState([])
 
     const tomarFoto = async () => {
         const verificacionPermisos = await ImagePicker.requestCameraPermissionsAsync()
@@ -53,26 +51,33 @@ const Perfil = () => {
 
     }
 
-    const renderEkos = ({ item }) => {
-        console.log(item)
-        const autor = item[0].autor;
-        const cancion = item[0].canción;
-        const urlPortada = item[0].urlPortada;
-        console.log(autor)
-        return (
-            <View style={styles.container}>
-                <View style={styles.rightContainer}>
-                    <View style={styles.perfil}>
-                        <Text style={styles.username}> {email}</Text>
-                    </View>
-                    <Text style={styles.textoPosteo}>¡Está escuchando {cancion} de {autor}!</Text>
-                </View>
-                <View style={styles.leftContainer}>
-                    <Image source={{ uri: urlPortada }} style={styles.portadaMusica} />
-                </View>
-            </View>
-        )
-    }
+    // const renderEkos = ({ item }) => {
+    //     console.log(item)
+    //     const autor = item[0].autor;
+    //     const cancion = item[0].canción;
+    //     const urlPortada = item[0].urlPortada;
+    //     console.log(autor)
+    //     return (
+    //         <View style={styles.container}>
+    //             <View style={styles.rightContainer}>
+    //                 <View style={styles.perfil}>
+    //                     <Text style={styles.username}> {email}</Text>
+    //                 </View>
+    //                 <Text style={styles.textoPosteo}>¡Está escuchando {cancion} de {autor}!</Text>
+    //             </View>
+    //             <View style={styles.leftContainer}>
+    //                 <Image source={{ uri: urlPortada }} style={styles.portadaMusica} />
+    //             </View>
+    //         </View>
+    //     )
+    // }
+
+    // useEffect(() => {
+    //     if (dataEkos) {
+    //         setDataArr(Object.values(dataEkos))
+    //         console.log("PERFILLLLLLLLLLLLLLLLLLLLLLL -----------------------", dataEkos)
+    //     }
+    // }, [dataEkos])
 
     return (
         <>
@@ -86,32 +91,31 @@ const Perfil = () => {
                             }}
                         />
                     </View>
-                    <View style={styles.infoUsuarioContainer}>
-                        <View style={styles.nombresYEditar}>
-                            <View style={styles.nombres}>
-                                <Text style={styles.nombre}> {email} </Text>
-                            </View>
-                            <TouchableOpacity
-                                style={styles.editar}
-                                onPress={tomarFoto} >
-                                <FontAwesome name="camera" size={24} color="black" />
-                            </TouchableOpacity>
-                        </View>
+                    <TouchableOpacity
+                        style={styles.editar}
+                        onPress={tomarFoto} >
+                        <FontAwesome name="camera" size={24} color="black" />
+                    </TouchableOpacity>
+                </View>
+                {/* <View style={styles.separacion}></View> */}
+                <View style={styles.nombresYEditar}>
+                    <View style={styles.nombres}>
+                        <Text style={styles.nombre}> Yo soy: {email} </Text>
                     </View>
                 </View>
-                <View style={styles.separacion}></View>
             </View>
 
-            <View style={styles.containerGeneral}>
-            <FlatList
-                data={dataArr}
-                keyExtractor={item => item.canción}
-                renderItem={renderEkos}
-                refreshControl={
-                    <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-                }
-            />
-        </View>
+
+            {/* <View style={styles.containerGeneral}>
+                <FlatList
+                    data={dataArr}
+                    keyExtractor={item => item.canción}
+                    renderItem={renderEkos}
+                    refreshControl={
+                        <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+                    }
+                />
+            </View> */}
         </>
     )
 }

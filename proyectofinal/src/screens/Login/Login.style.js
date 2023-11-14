@@ -40,12 +40,12 @@ export default styles = StyleSheet.create({
         width: '60%', 
         height: 200, 
         resizeMode: 'contain', 
-        marginTop: '30%',
+        marginTop: 25,
     },
     textoNoTenesCuenta: {
         fontSize: sizes.inputs,
         color: colors.blanco,
-        paddingTop: '50%',
+        paddingTop: 20,
         fontFamily: 'meriendaRegular',
     },
     contraseniaView: {

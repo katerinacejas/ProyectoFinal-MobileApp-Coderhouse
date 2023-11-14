@@ -6,15 +6,18 @@ export default styles = StyleSheet.create({
     container: {
         backgroundColor: colors.fondoClaro,
         padding: 20,
+        alignItems:'center',
     },
     perfilContainer: {
         flexDirection: 'row',
+        alignItems:'center',
     },
     perfilImagenContainer: {
-        width: 80,
-        height: 80,
+        width: 150,
+        height: 150,
         borderRadius: 50,
-
+        alignItems:'center',
+        
     },
     perfilImagen: {
         width: '100%',
@@ -23,7 +26,7 @@ export default styles = StyleSheet.create({
         borderRadius: 50,
     },
     nombre: {
-        fontSize: 20,
+        fontSize: 18,
         color: colors.violeta,
     },
     usuario: {
@@ -92,15 +95,14 @@ export default styles = StyleSheet.create({
         height: 120,
     },
     nombresYEditar:{
-        flex: 1,
-        flexDirection: 'row',
         alignItems: 'center',
+        marginTop: 25,
     },
     nombres: {
         marginRight: 30,
     },
     editar: {
-        padding: 5,
+        padding: 8,
         borderRadius: 50,
         backgroundColor: colors.blanco,
         borderColor: colors.violeta,
@@ -108,6 +110,6 @@ export default styles = StyleSheet.create({
     },
     infoUsuarioContainer: {
         flex: 1,
-        marginLeft: 20,
+        alignItems:'center',
     },
 })

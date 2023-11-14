@@ -1,5 +1,5 @@
 export const sizes = {
-    inputs: 20,
-    botones: 20,
-    advertencias: 15,
+    inputs: 16,
+    botones: 16,
+    advertencias: 16,
 }
